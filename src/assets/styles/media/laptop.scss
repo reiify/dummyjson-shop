@@ -1,0 +1,61 @@
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .products__item {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    .card {
+
+        &__info {
+            &-header {
+                width: 100% !important;
+                flex-wrap: wrap;
+            } 
+        }
+
+        &__thumb {
+            height: 215px !important;
+        }
+
+        &__info {
+
+            &__description {
+                width: 215px !important;
+            }
+
+            &-details {
+                flex-wrap: wrap;
+                width: 215px;
+            }
+        }
+    }
+}
+
+@media (width: 1440px) {
+    .card {
+
+        &__info {
+            &-header {
+                width: 100% !important;
+                flex-wrap: wrap;
+            } 
+        }
+
+        &__thumb {
+            height: 300px !important;
+        }
+
+        &__info {
+
+            &__description {
+                width: 300px !important;
+            }
+
+            &-details {
+                flex-wrap: wrap;
+                width: 300px;
+            }
+        }
+    }
+}
