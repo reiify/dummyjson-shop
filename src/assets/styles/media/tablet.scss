@@ -4,7 +4,7 @@
     }
 
     .products__item {
-        grid-template-columns: repeat(3, 1fr) !important;
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 12px !important;
     }
 
@@ -28,22 +28,6 @@
                 }
             }
             
-        }
-
-        &__thumb {
-            height: 205px !important;
-        }
-
-        &__info {
-
-            &__description {
-                width: 205px !important;
-            }
-
-            &-details {
-                flex-wrap: wrap;
-                width: 205px;
-            }
         }
     }
     /* fav page */
