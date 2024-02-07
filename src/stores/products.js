@@ -6,14 +6,15 @@ export const useProducts = defineStore({
   id: "products",
 
   state: () => ({
-    products: ref([]),
+    products: null,
+    searchedProducts: null,
     cart: reactive([]),
 
     limit: ref(12),
     skip: ref(0),
     current: ref(1),
 
-    query: ref(""),
+    query: ref(''),
   }),
 
   actions: {
@@ -62,9 +63,23 @@ export const useProducts = defineStore({
         console.error(error);
       }
     },
+
+    async getSearch() {
+      try {
+        const searchResponse = await axios.get("https://dummyjson.com/products/search", {
+          params: {
+            q: this.query
+          },
+        });
+        const searchData = await searchResponse.data;
+        this.searchedProducts = searchData.products
+      } catch (error) {
+        console.error(error);
+      }
+    }
   },
 
   getters: {
-    
+
   },
 });
