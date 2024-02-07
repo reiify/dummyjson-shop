@@ -1,16 +1,7 @@
 <template>
-    <div
-        class="card"
-        v-for="product in store.products"
-        :key="product.id"
-        @click="goToProductPage(product.id)"
-    >
+    <div class="card" v-for="product in store.products" :key="product.id" @click="goToProductPage(product.id)">
         <div class="card__thumb">
-            <img
-                :src="product.thumbnail"
-                alt="product's thumbnail"
-                class="card__thumb-img"
-            >
+            <img :src="product.thumbnail" alt="product's thumbnail" class="card__thumb-img">
         </div>
         <div class="card__info">
             <div class="card__info-header">
@@ -19,7 +10,8 @@
                 <div class="card__info-header__price">
                     <q-icon name="sym_r_attach_money" class="card__info-header__price-icon" />
 
-                    <h6 class="card__info-header__title">{{ product.price - (product.price * (product.discountPercentage / 100)).toFixed(1) }}</h6>
+                    <h6 class="card__info-header__title">{{ product.price - (product.price * (product.discountPercentage /
+                        100)).toFixed(1) }}</h6>
                 </div>
             </div>
 
@@ -38,7 +30,8 @@
 
                 <div class="card__info-details__trivia">
                     <q-icon name="sym_r_sell" class="card__info-details__trivia-icon" />
-                    <h6 class="card__info-details__trivia-text" style="text-decoration: line-through; color: #777;">${{ product.price }}</h6>
+                    <h6 class="card__info-details__trivia-text" style="text-decoration: line-through; color: #777;">${{
+                        product.price }}</h6>
                     <p class="card__info-details__trivia-text">-{{ product.discountPercentage.toFixed(0) }}%</p>
                 </div>
             </div>
@@ -51,7 +44,7 @@ import { onMounted } from 'vue';
 import { useProducts } from '@/stores/products.js';
 import { useRouter } from 'vue-router';
 
-const store = useProducts(); 
+const store = useProducts();
 const router = useRouter();
 
 const goToProductPage = (id) => {
@@ -71,9 +64,10 @@ onMounted(() => {
     gap: 8px;
 
     &__thumb {
-        height: 275px;
-        aspect-ratio: 1;
-        position: relative;
+        max-height: 500px;
+        max-width: 500px;
+        height: 100%;
+        width: 100%;
         border-radius: 12px;
 
         background: #777;
@@ -94,8 +88,8 @@ onMounted(() => {
 
         &-header {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-            width: 275px;
 
             &__title {
                 color: #000;
@@ -120,12 +114,9 @@ onMounted(() => {
 
         &__description {
             font-size: 14px;
-            width: 200px;
+            width: 100%;
             color: #777;
             line-height: normal;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
         }
 
         &-details {
