@@ -67,7 +67,7 @@
                 <q-item href="https://www.figma.com/file/yYjyj8lnEjiuTsg9GVK5xP/DummyJSON-Shop?type=design&node-id=0%3A1&mode=design&t=1ZyQlKswisIBUrdn-1">
                     <q-item-section avatar>
                         <q-avatar square size="24px">
-                            <img src="https://static.figma.com/uploads/1a667ef53b7c4837049399d0593ffca39e0bec9e">
+                            <img src="https://static.figma.com/app/icon/1/favicon.png">
                         </q-avatar>
                     </q-item-section>
                     <q-item-section>
