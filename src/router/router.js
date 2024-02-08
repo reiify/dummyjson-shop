@@ -5,7 +5,6 @@ import InfoPage from "@/pages/InfoPage.vue";
 import CartPage from "@/pages/CartPage.vue";
 import ErrorPage from "@/pages/ErrorPage.vue";
 import ProductPage from "@/pages/ProductPage.vue";
-import SearchPage from "@/pages/SearchPage.vue";
 
 const routes = [
   {
@@ -27,11 +26,6 @@ const routes = [
     path: "/product/:id",
     name: "productsPage",
     component: ProductPage,
-  },
-  {
-    path: "/search",
-    name: "searchPage",
-    component: SearchPage,
   },
   {
     path: "/:pathMatch(.*)*",
