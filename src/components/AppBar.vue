@@ -8,7 +8,7 @@
             </select>
         </form>
 
-        <input placeholder="Search..." id="search-bar" v-model="store.query" @click="goToSearchPage" />
+        <input placeholder="Search..." id="search-bar" v-model="store.query" />
         <form class="per-page-wrapper">
             <label for="contentLimit">Display</label>
             <select :value="store.limit" @change="store.setLimit($event.target.value)" id="contentLimit">
@@ -25,15 +25,9 @@
 <script setup>
 import { useProducts } from '@/stores/products.js';
 import { onMounted, ref, watch } from 'vue';
-import { useRouter } from "vue-router";
 
 const store = useProducts();
-const router = useRouter();
 const getLimit = localStorage.getItem('limit');
-
-const goToSearchPage = () => {
-    router.push('/search');
-}
 
 function sortProducts(event) {
     const { value } = event.target;
@@ -49,8 +43,6 @@ function sortProducts(event) {
 onMounted(() => {
     store.setLimit(getLimit || 12);
 });
-
-
 </script>
 
 <style lang="scss">
