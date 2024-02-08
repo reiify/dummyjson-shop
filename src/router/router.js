@@ -10,6 +10,7 @@ import SearchPage from "@/pages/SearchPage.vue";
 const routes = [
   {
     path: "/",
+    redirect: "/home",
     name: "home",
     component: HomePage,
   },
